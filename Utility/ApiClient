@@ -1,0 +1,11 @@
+using System.Net.Http;
+
+namespace csharp.qa.Utility.ApiClient {
+public class UserApiClient {
+    private readonly HttpClient _httpClient;
+    public UserApiClient(HttpClient httpClient) => _httpClient = httpClient;
+
+    public async Task<HttpResponseMessage> GetUserAsync(int userId) => await _httpClient.GetAsync($"https:...{userId}");
+ 
+}
+}
